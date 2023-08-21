@@ -50,7 +50,7 @@ int print_int(va_list ap, params_t *params)
 
 /**
  * print_string - prints a string
- * @ap argument pointer
+ * @ap: argument pointer
  * @params: the parameters struct
  *
  * Return: the number of characters printed

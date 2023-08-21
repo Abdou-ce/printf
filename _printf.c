@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	int total_bytes = 0;
-	va_list args;
+	va_list ap;
 	char *format_ptr, *start_ptr;
 	params_t params = PARAMS_INIT;
 
-	va_start(args, format);
+	va_start(ap, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (format_ptr = (char *)format; *format_ptr; format_ptr++)
 	{
-		init_params(&params, args);
+		init_params(&params, ap);
 		if (*format_ptr != '%')
 		{
 			total_bytes += _putchar(*format_ptr);
@@ -33,17 +33,17 @@ int _printf(const char *format, ...)
 		{
 			format_ptr++;
 		}
-		format_ptr = get_width(format_ptr, &params, args);
-		format_ptr = get_precision(format_ptr, &params, args);
+		format_ptr = get_width(format_ptr, &params, ap);
+		format_ptr = get_precision(format_ptr, &params, ap);
 		if (get_modifier(format_ptr, &params))
 			format_ptr++;
 		if (!get_specifier(format_ptr))
 			total_bytes += print_from_to(start_ptr, format_ptr,
 				params.l_modifier || params.h_modifier ? format_ptr - 1 : 0);
 		else
-			total_bytes += get_print_func(format_ptr, args, &params);
+			total_bytes += get_print_func(format_ptr, ap, &params);
 	}
 	_putchar(BUF_FLUSH);
-	va_end(args);
+	va_end(ap;
 	return (total_bytes);
 }
