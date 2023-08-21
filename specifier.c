@@ -6,7 +6,7 @@
  *
  * Return: the format function pointer
  */
-int (*my_get_specifier(char *s))(va_list ap, params_t *params)
+int (*get_specifier(char *s))(va_list ap, params_t *params)
 {
 	specifier_t specifiers[] = {
 		{"c", print_char},
@@ -46,9 +46,9 @@ int (*my_get_specifier(char *s))(va_list ap, params_t *params)
  *
  * Return: the number of bytes printed
  */
-int my_get_print_func(char *s, va_list ap, params_t *params)
+int get_print_func(char *s, va_list ap, params_t *params)
 {
-	int (*f)(va_list, params_t *) = my_get_specifier(s);
+	int (*f)(va_list, params_t *) = get_specifier(s);
 
 	if (f)
 		return (f(ap, params));
@@ -62,7 +62,7 @@ int my_get_print_func(char *s, va_list ap, params_t *params)
  *
  * Return: if flag was valid
  */
-int my_get_flag(char *s, params_t *params)
+int get_flag(char *s, params_t *params)
 {
 	int i = 0;
 
@@ -94,7 +94,7 @@ int my_get_flag(char *s, params_t *params)
  *
  * Return: if modifier was valid
  */
-int my_get_modifier(char *s, params_t *params)
+int get_modifier(char *s, params_t *params)
 {
 	int i = 0;
 
@@ -118,7 +118,7 @@ int my_get_modifier(char *s, params_t *params)
  *
  * Return: new pointer
  */
-char *my_get_width(char *s, params_t *params, va_list ap)
+char *get_width(char *s, params_t *params, va_list ap)
 {
 	int d = 0;
 
