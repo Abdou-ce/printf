@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * my_get_specifier - finds the format function
+ * get_specifier - finds the format function
  * @s: the format string
  *
  * Return: the format function pointer
@@ -39,7 +39,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 }
 
 /**
- * my_get_print_func - finds the format function
+ * get_print_func - finds the format function
  * @s: the format string
  * @ap: argument pointer
  * @params: the parameters struct
@@ -56,7 +56,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
 }
 
 /**
- * my_get_flag - finds the flag function
+ * get_flag - finds the flag function
  * @s: the format string
  * @params: the parameters struct
  *
@@ -88,7 +88,7 @@ int get_flag(char *s, params_t *params)
 }
 
 /**
- * my_get_modifier - finds the modifier function
+ * get_modifier - finds the modifier function
  * @s: the format string
  * @params: the parameters struct
  *
@@ -111,7 +111,7 @@ int get_modifier(char *s, params_t *params)
 }
 
 /**
- * my_get_width - gets the width from the format string
+ * get_width - gets the width from the format string
  * @s: the format string
  * @params: the parameters struct
  * @ap: the argument pointer

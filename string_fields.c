@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * my_get_precision - gets the precision from the format string
+ * get_precision - gets the precision from the format string
  * @p: the format string
  * @params: the parameters struct
  * @ap: the argument pointer

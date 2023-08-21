@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * my_printf - custom printf function
+ * _printf - custom printf function
  * @format: the format string
  *
  * Return: number of characters printed
