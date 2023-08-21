@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
- * _printf - custom printf function
+ * _printf - prints anything
  * @format: the format string
  *
- * Return: number of characters printed
+ * Return: number of bytes printed
  */
 int _printf(const char *format, ...)
 {
-	int total_bytes = 0;
+	int sum = 0;
 	va_list ap;
-	char *format_ptr, *start_ptr;
+	char *p, *start;
 	params_t params = PARAMS_INIT;
 
 	va_start(ap, format);
@@ -19,31 +19,31 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (format_ptr = (char *)format; *format_ptr; format_ptr++)
+	for (p = (char *)format; *p; p++)
 	{
 		init_params(&params, ap);
-		if (*format_ptr != '%')
+		if (*p != '%')
 		{
-			total_bytes += _putchar(*format_ptr);
+			sum += _putchar(*p);
 			continue;
 		}
-		start_ptr = format_ptr;
-		format_ptr++;
-		while (get_flag(format_ptr, &params))
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char at p is flag char */
 		{
-			format_ptr++;
+			p++; /* next char */
 		}
-		format_ptr = get_width(format_ptr, &params, ap);
-		format_ptr = get_precision(format_ptr, &params, ap);
-		if (get_modifier(format_ptr, &params))
-			format_ptr++;
-		if (!get_specifier(format_ptr))
-			total_bytes += print_from_to(start_ptr, format_ptr,
-				params.l_modifier || params.h_modifier ? format_ptr - 1 : 0);
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p,
+				params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-			total_bytes += get_print_func(format_ptr, ap, &params);
+			sum += get_print_func(p, ap, &params);
 	}
 	_putchar(BUF_FLUSH);
 	va_end(ap);
-	return (total_bytes);
+	return (sum);
 }
