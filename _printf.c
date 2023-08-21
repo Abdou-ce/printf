@@ -44,6 +44,6 @@ int _printf(const char *format, ...)
 			total_bytes += get_print_func(format_ptr, ap, &params);
 	}
 	_putchar(BUF_FLUSH);
-	va_end(ap;
+	va_end(ap);
 	return (total_bytes);
 }
