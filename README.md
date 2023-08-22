@@ -30,4 +30,4 @@ int print_percent(va_list ap, params_t *params): Prints the percent character '%
 int print_S(va_list ap, params_t *params): Prints strings while handling non-printable and extended ASCII characters.
 
 Function Purpose
-When parsing a format string in the custom printf-like implementation, these functions are responsible for handling specific format specifiers encountered (e.g., %c, %d, %s). They format and print the corresponding data based on the formatting options and flags specified within the format strin.
+When parsing a format string in the custom printf-like implementation, these functions are responsible for handling specific format specifiers encountered (e.g., %c, %d, %s). They format and print the corresponding data based on the formatting options and flags specified within the format string.
