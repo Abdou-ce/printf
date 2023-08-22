@@ -12,4 +12,22 @@ The convert, print_unsigned, and print_address functions are integral components
 4-"convert_number.c"
 The print_hex, print_HEX, print_binary, and print_octal functions are integral components of a custom printf-like implementation. These functions are responsible for converting and printing unsigned numeric values in different base representations, including hexadecimal (both lowercase and uppercase), binary, and octal.
 
-5-
+5-"params.c"
+The init_params function is a crucial part of a custom printf-like implementation. It is responsible for initializing the fields of a params_t struct, which holds formatting parameters and flags used during the printing process.
+
+6-"print_functions.c"
+This collection of functions is an integral part of a custom printf-like implementation. These functions handle the formatting and printing of different types of data based on format specifiers encountered in the format string.
+
+Included Functions
+int print_char(va_list ap, params_t *params): Prints a single character.
+
+int print_int(va_list ap, params_t *params): Prints signed integer numbers.
+
+int print_string(va_list ap, params_t *params): Prints strings.
+
+int print_percent(va_list ap, params_t *params): Prints the percent character '%'.
+
+int print_S(va_list ap, params_t *params): Prints strings while handling non-printable and extended ASCII characters.
+
+Function Purpose
+When parsing a format string in the custom printf-like implementation, these functions are responsible for handling specific format specifiers encountered (e.g., %c, %d, %s). They format and print the corresponding data based on the formatting options and flags specified within the format strin.
