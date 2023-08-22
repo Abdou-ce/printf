@@ -31,3 +31,21 @@ int print_S(va_list ap, params_t *params): Prints strings while handling non-pri
 
 Function Purpose
 When parsing a format string in the custom printf-like implementation, these functions are responsible for handling specific format specifiers encountered (e.g., %c, %d, %s). They format and print the corresponding data based on the formatting options and flags specified within the format string.
+
+7-"print_number.c"
+This set of utility functions is designed to support the functionality of a custom printf-like implementation. These functions handle tasks related to character digit checking, string length calculation, and formatting and printing of numbers.
+
+Included Functions
+int _isdigit(int c): Checks whether a character is a digit (0-9).
+
+int _strlen(char *s): Returns the length of a string.
+
+int print_number(char *str, params_t *params): Prints numbers with various formatting options.
+
+int print_number_right_shift(char *str, params_t *params): Prints numbers right-aligned with padding.
+
+int print_number_left_shift(char *str, params_t *params): Prints numbers left-aligned with padding.
+
+Function Purpose
+These utility functions are essential components of a custom printf-like implementation. They are used to manage and format data that is passed as arguments to the custom _printf function. They handle tasks like checking if a character is a digit, calculating the length of a string, and formatting and printing numbers with various alignment and padding options.
+
