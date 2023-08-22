@@ -49,3 +49,15 @@ int print_number_left_shift(char *str, params_t *params): Prints numbers left-al
 Function Purpose
 These utility functions are essential components of a custom printf-like implementation. They are used to manage and format data that is passed as arguments to the custom _printf function. They handle tasks like checking if a character is a digit, calculating the length of a string, and formatting and printing numbers with various alignment and padding options.
 
+8-"simple_printers.c"
+This set of utility functions provides additional capabilities for a custom printf-like implementation. These functions allow for printing specific ranges of characters, reversing strings, and performing ROT13 encoding.
+
+Included Functions
+int print_from_to(char *start, char *stop, char *except): Prints characters in a specified range of memory addresses while excluding a specific address.
+
+int print_rev(va_list ap, params_t *params): Prints a string in reverse order.
+
+int print_rot13(va_list ap, params_t *params): Prints a string using the ROT13 cipher algorithm.
+
+Function Purpose
+These utility functions enhance the capabilities of the custom printf-like implementation. They offer functionalities such as selective printing of characters within a range, reversing strings, and applying the ROT13 cipher for text encoding.
