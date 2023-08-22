@@ -78,3 +78,7 @@ char *get_width(char *s, params_t *params, va_list ap): Extracts and assigns the
 
 Function Purpose
 These functions work together to identify and parse format specifiers, extract formatting options, and manage various formatting flags and modifiers. They ensure that the correct formatting function is invoked and that the output is formatted as specified.
+
+10-"string_fields.c"
+The get_precision function is a fundamental component of the custom printf-like implementation that deals with extracting precision information from the format string. This function is responsible for identifying and parsing the precision value specified in the format string and storing it in the appropriate parameter struct.
+The get_precision function aims to extract the precision value from the format string and store it in the params struct. The precision value is typically specified using the dot (.) character, followed by either a numeric value or an asterisk (*) to indicate that the precision value is provided as a variable argument.
