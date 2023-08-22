@@ -61,3 +61,20 @@ int print_rot13(va_list ap, params_t *params): Prints a string using the ROT13 c
 
 Function Purpose
 These utility functions enhance the capabilities of the custom printf-like implementation. They offer functionalities such as selective printing of characters within a range, reversing strings, and applying the ROT13 cipher for text encoding.
+
+9-"specifier.c"
+This set of functions is responsible for identifying format specifiers, parsing formatting options, and determining the corresponding formatting function. These functions enable the core functionality of formatting and printing various data types based on the provided format string.
+
+Included Functions
+int (*get_specifier(char *s))(va_list ap, params_t *params): Identifies the appropriate formatting function based on a given format specifier character.
+
+int get_print_func(char *s, va_list ap, params_t *params): Retrieves the formatting function corresponding to a format specifier and invokes it with the provided arguments.
+
+int get_flag(char *s, params_t *params): Identifies and sets formatting flags based on the characters present in the format string.
+
+int get_modifier(char *s, params_t *params): Identifies and sets modifier flags based on the characters in the format string.
+
+char *get_width(char *s, params_t *params, va_list ap): Extracts and assigns the width from the format string, accounting for variable arguments.
+
+Function Purpose
+These functions work together to identify and parse format specifiers, extract formatting options, and manage various formatting flags and modifiers. They ensure that the correct formatting function is invoked and that the output is formatted as specified.
