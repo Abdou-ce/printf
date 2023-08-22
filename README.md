@@ -9,4 +9,7 @@ The _puts and _putchar functions are integral components of a custom printf-like
 3-"number.c"
 The convert, print_unsigned, and print_address functions are integral components of a custom printf-like implementation. These functions are responsible for converting numeric values and addresses into formatted strings and printing them to the standard output stream. They provide essential functionality to handle various types of data representation in a custom printing context.
 
+4-"convert_number.c"
+The print_hex, print_HEX, print_binary, and print_octal functions are integral components of a custom printf-like implementation. These functions are responsible for converting and printing unsigned numeric values in different base representations, including hexadecimal (both lowercase and uppercase), binary, and octal.
 
+5-
